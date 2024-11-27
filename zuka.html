@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="zuka.css">
+    <title><em>ZUKA</em>Photography Company</title>
+    <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    .image-container {
+      margin: 0 auto; /* center the image containers */
+      width: 80%;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22); /* material box shadow */
+      margin-bottom: 20px;
+      transition-duration: 1s;
+    }
+    .image-container:hover {
+      width: 90%;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.30), 0 14px 11px rgba(0,0,0,0.22);
+    }
+    /* make the images responsive */
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .image-description {
+      padding: 0 15px 15px 15px;
+      text-align: center;}
+        video{
+            width:100%;
+            height: auto;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Zuka Photography</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Capturing Moments</h1>
+        <p>Beautiful Photography for Your Special Moments</p>
+        <a href="#portfolio" class="btn">View Portfolio</a>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a professional photography company dedicated to capturing life's most precious moments. Our team of experienced photographers works to provide you with stunning images that you will cherish forever.</p>
+    </section>
+    <video src="Nganga.mp4" controls>play a clip</video>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <img src="images/Image1.jpg" alt="Image1" onclick="openLightbox();currentSlide(1)">
+            <img src="images/hero.jpg" alt="hero.jpg" onclick="openLightbox();currentSlide(2)">
+            <img src="images/Wife.jpg" alt="Wife.jpg" onclick="openLightbox();currentSlide(3)">
+               <img src="images/box.jpg" alt="box.jpg" onclick="openLightbox();currentSlide(4)">
+            <img src="imqges/box.jpg" alt="box.jpg" onclick="openLightbox();currentSlide(4)">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="sendEmail(event)">
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Photography. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script src="zuka.js"></script>
+</body>
+</html>
